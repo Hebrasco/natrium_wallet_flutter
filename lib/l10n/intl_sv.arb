@@ -221,5 +221,10 @@
   "exampleCardFromKal": "Från någon apa",
   "newAccountIntroKal": "Det här är ditt nya konto. Så snart du tar emot BANANO, kommer transaktioner att se ut så här:",
   "liveSupportButton": "Support",
-  "connectingHeader": "Ansluter"
+  "connectingHeader": "Ansluter",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

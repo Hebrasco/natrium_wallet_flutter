@@ -223,5 +223,10 @@
   "liveSupportButton": "Support",
   "connectingHeader": "Verbindet",
   "minimumSend": "Der Mindest-Sendebetrag beträgt %1 NANO",
-  "natricon": "Natricon"
+  "natricon": "Natricon",
+  "chartToday": "Heute",
+  "chartWeek": "Woche",
+  "chartMonth": "Monat",
+  "chartYear": "Jahr",
+  "chartMax": "Max",
 }

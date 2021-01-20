@@ -221,5 +221,10 @@
   "exampleCardFromKal": "d'un monKey aléatoire",
   "newAccountIntroKal": "Ceci est votre nouveau compte. Lorsque vous recevrez des BANANO, les transactions apparaîtront comme ci-dessous.:",
   "liveSupportButton": "Support",
-  "connectingHeader": "Connexion"
+  "connectingHeader": "Connexion",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

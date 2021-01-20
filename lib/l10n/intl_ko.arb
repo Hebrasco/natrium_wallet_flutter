@@ -97,5 +97,10 @@
   "exampleCardLittle": "조금",
   "exampleCardLot": "많은",
   "exampleCardTo": "임의의 수령인에게",
-  "exampleCardFrom": "임의의 발송자로부터"
+  "exampleCardFrom": "임의의 발송자로부터",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

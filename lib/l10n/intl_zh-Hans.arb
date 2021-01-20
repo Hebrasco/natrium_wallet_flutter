@@ -221,5 +221,10 @@
   "exampleCardFromKal": "来自一只未知的猴子",
   "newAccountIntroKal": "这是您的新账户。当您收到 BANANO 时, 交易会如下出现：",
   "liveSupportButton": "技术支持",
-  "connectingHeader": "连接中"
+  "connectingHeader": "连接中",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

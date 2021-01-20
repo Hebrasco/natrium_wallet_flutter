@@ -221,5 +221,10 @@
   "exampleCardFromKal": "от случайна маймунка",
   "newAccountIntroKal": "Това е вашият нов акаунт. След като получите BANANO, транзакциите ще се покажат по следният начин:",
   "liveSupportButton": "Поддръжка ",
-  "connectingHeader": "Свързвам се"
+  "connectingHeader": "Свързвам се",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

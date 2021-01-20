@@ -223,5 +223,10 @@
   "liveSupportButton": "技術支援",
   "connectingHeader": "連線中",
   "minimumSend": "最低發送金額是 %1 NANO",
-  "natricon": "卡通圖示"
+  "natricon": "卡通圖示",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

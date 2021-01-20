@@ -221,5 +221,10 @@
   "exampleCardFromKal": "de la oricine",
   "newAccountIntroKal": "Acesta este noul tău cont! Odată ce primești BANANO, tranzacțiile vor arată astfel:",
   "liveSupportButton": "Asistență",
-  "connectingHeader": "Se încarcă"
+  "connectingHeader": "Se încarcă",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

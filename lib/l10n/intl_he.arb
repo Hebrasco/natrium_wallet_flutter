@@ -156,5 +156,10 @@
   "exampleCardIntroKal": "ברוך הבא לקאליום. ברגע שתקבל באנאנו, הטרנסקציות יופיעו כך",
   "exampleCardToKal": "לקוף רנדומלי",
   "exampleCardFromKal": "מקוף רנדומלי",
-  "newAccountIntroKal": "ברוך הבא לקאליום. ברגע שתקבל באנאנו, הטרנסקציות יופיעו כך"
+  "newAccountIntroKal": "ברוך הבא לקאליום. ברגע שתקבל באנאנו, הטרנסקציות יופיעו כך",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

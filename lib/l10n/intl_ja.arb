@@ -199,5 +199,10 @@
   "noSkipButton": "いいえ、スキップする",
   "yesButton": "はい",
   "nextButton": "次へ",
-  "goBackButton": "戻る"
+  "goBackButton": "戻る",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

@@ -221,5 +221,10 @@
   "exampleCardFromKal": "galing sa iba",
   "newAccountIntroKal": "Ito ang iyong bagong account. Pag nakareceive ka ng BANANO, ganito ang makikita mo:",
   "liveSupportButton": "Support",
-  "connectingHeader": "Kumokonekta"
+  "connectingHeader": "Kumokonekta",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

@@ -179,5 +179,10 @@
   "exampleCardIntroKal": "Sveicināti Kalium. Tiklīdz saņemsiet BANANO, transakcijas būs redzamas šādi:",
   "exampleCardToKal": "kādam pērtiķim",
   "exampleCardFromKal": "no kāda pērtiķa",
-  "newAccountIntroKal": "Šis ir jūsu jaunais konts. Tiklīdz saņemsiet BANANO, transakcijas būs redzamas šādi:"
+  "newAccountIntroKal": "Šis ir jūsu jaunais konts. Tiklīdz saņemsiet BANANO, transakcijas būs redzamas šādi:",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

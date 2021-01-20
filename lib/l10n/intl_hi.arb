@@ -95,5 +95,10 @@
   "exampleCardLittle": "थोड़े से",
   "exampleCardLot": "बहुत सारे",
   "exampleCardTo": "अजनबी बंदर को",
-  "exampleCardFrom": "अजनबी बंदर से"
+  "exampleCardFrom": "अजनबी बंदर से",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

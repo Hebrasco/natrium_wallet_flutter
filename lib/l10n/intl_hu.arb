@@ -125,5 +125,10 @@
   "unlockBiometricsKal": "Hitelesítés Szükséges a Kaliumba való bejelentkezéshez",
   "exampleCardIntroKal": "Üdvözöllek a Kaliumban! Így fogod látni a tranzakcióid, amikor kapsz BANANO-t.",
   "exampleCardToKal": "Egy random majomnak",
-  "exampleCardFromKal": "Egy random majomtól"
+  "exampleCardFromKal": "Egy random majomtól",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

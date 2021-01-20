@@ -885,5 +885,10 @@
   "secretPhraseCopied": "Secret Phrase Copied",
   "import": "Import",
   "importSeedInstead": "Import Seed Instead",
-  "switchToSeed": "Switch to Seed"
+  "switchToSeed": "Switch to Seed",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

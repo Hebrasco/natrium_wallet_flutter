@@ -223,5 +223,10 @@
   "liveSupportButton": "Ondersteuning",
   "connectingHeader": "Verbinden",
   "minimumSend": "Het minimum te verzenden bedrag is %1 NANO",
-  "natricon": "Natricon"
+  "natricon": "Natricon",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

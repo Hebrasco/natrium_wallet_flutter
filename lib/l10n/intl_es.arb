@@ -221,5 +221,10 @@
   "exampleCardFromKal": "de un mono aleatorio",
   "newAccountIntroKal": "Esta es su nueva cuenta. Una vez que reciba BANANO, las transacciones se mostrarán así:",
   "liveSupportButton": "Soporte",
-  "connectingHeader": "Conectando"
+  "connectingHeader": "Conectando",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

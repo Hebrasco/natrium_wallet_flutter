@@ -153,6 +153,30 @@ class AppLocalization {
 
   /// -- END GENERIC ITEMS
 
+  /// -- CHART ITEMS
+
+  String get chartToday {
+    return Intl.message('Today', desc: 'chart_history_today', name: 'chartToday');
+  }
+
+  String get chartWeek {
+    return Intl.message('Week', desc: 'chart_history_week', name: 'chartWeek');
+  }
+
+  String get chartMonth {
+    return Intl.message('Month', desc: 'chart_history_month', name: 'chartMonth');
+  }
+
+  String get chartYear {
+    return Intl.message('Year', desc: 'chart_history_year', name: 'chartYear');
+  }
+
+  String get chartMax {
+    return Intl.message('Max', desc: 'chart_history_max', name: 'chartMax');
+  }
+
+  /// -- END CHART ITEMS
+
   /// -- CONTACT ITEMS
 
   String get removeContact {

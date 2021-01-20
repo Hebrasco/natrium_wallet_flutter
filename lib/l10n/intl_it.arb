@@ -221,5 +221,10 @@
   "exampleCardFromKal": "da una scimmietta",
   "newAccountIntroKal": "Questo è il tuo nuovo account. Una volta ricevuti BANANO, le transazioni appariranno così:",
   "liveSupportButton": "Supporto",
-  "connectingHeader": "In connessione"
+  "connectingHeader": "In connessione",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

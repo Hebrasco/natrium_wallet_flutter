@@ -221,5 +221,10 @@
   "exampleCardFromKal": "من قرد عشوائي",
   "newAccountIntroKal": "هذا هو حسابك الجديد بمجرد تلقي BANANO ، ستظهر المعاملات كما يلي:",
   "liveSupportButton": "مساعدة",
-  "connectingHeader": "الاتصال"
+  "connectingHeader": "الاتصال",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

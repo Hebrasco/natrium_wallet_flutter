@@ -221,5 +221,10 @@
   "exampleCardFromKal": "từ một người nào đó",
   "newAccountIntroKal": "Đây là tài khoản mới của bạn. khi bạn nhận được Banano, giao dịch sẽ hiển thị như sau:",
   "liveSupportButton": "Hỗ trợ",
-  "connectingHeader": "Đang kết nối"
+  "connectingHeader": "Đang kết nối",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

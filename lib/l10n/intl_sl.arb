@@ -183,5 +183,10 @@
   "exampleCardIntroKal": "Dobrodošli v Kalium. Ko boste prejeli BANANO, bodo transakcije prikazane takole:",
   "exampleCardToKal": "naključni opici",
   "exampleCardFromKal": "od naključne opice",
-  "newAccountIntroKal": "To je vaš nov račun. Ko boste prejeli BANANO, bodo transakcije prikazane takole:"
+  "newAccountIntroKal": "To je vaš nov račun. Ko boste prejeli BANANO, bodo transakcije prikazane takole:",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }

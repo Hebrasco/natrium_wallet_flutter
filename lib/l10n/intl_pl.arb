@@ -221,5 +221,10 @@
   "exampleCardFromKal": "od losowej małpy",
   "newAccountIntroKal": "To jest twoje nowe Konto. Kiedy dostaniesz BANANO, transakcje będą wyglądały tak:",
   "liveSupportButton": "Centrum Pomocy",
-  "connectingHeader": "Łączenie"
+  "connectingHeader": "Łączenie",
+  "chartToday": "Today",
+  "chartWeek": "Week",
+  "chartMonth": "Month",
+  "chartYear": "Year",
+  "chartMax": "Max",
 }
