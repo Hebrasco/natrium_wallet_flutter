@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flare_flutter/flare.dart';
 import 'package:flare_dart/math/mat2d.dart';
 import 'package:flare_flutter/flare_actor.dart';
@@ -31,6 +32,7 @@ import 'package:natrium_wallet_flutter/ui/send/send_confirm_sheet.dart';
 import 'package:natrium_wallet_flutter/ui/receive/receive_sheet.dart';
 import 'package:natrium_wallet_flutter/ui/settings/settings_drawer.dart';
 import 'package:natrium_wallet_flutter/ui/widgets/buttons.dart';
+import 'package:natrium_wallet_flutter/ui/widgets/chart/chart.dart';
 import 'package:natrium_wallet_flutter/ui/widgets/dialog.dart';
 import 'package:natrium_wallet_flutter/ui/widgets/sheet_util.dart';
 import 'package:natrium_wallet_flutter/ui/widgets/list_slidable.dart';
@@ -1405,108 +1407,121 @@ class _AppHomePageState extends State<AppHomePage>
           left: 14.0,
           right: 14.0,
           top: MediaQuery.of(context).size.height * 0.005),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          AnimatedContainer(
-            duration: Duration(milliseconds: 200),
-            curve: Curves.easeInOut,
-            width: 80.0,
-            height: mainCardHeight,
-            alignment: AlignmentDirectional(-1, -1),
-            child: AnimatedContainer(
+      child: Column(
+        children: [
+          Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            AnimatedContainer(
               duration: Duration(milliseconds: 200),
               curve: Curves.easeInOut,
-              margin: EdgeInsetsDirectional.only(
-                  top: settingsIconMarginTop, start: 5),
-              height: 50,
-              width: 50,
-              child: FlatButton(
-                  highlightColor: StateContainer.of(context).curTheme.text15,
-                  splashColor: StateContainer.of(context).curTheme.text15,
-                  onPressed: () {
-                    _scaffoldKey.currentState.openDrawer();
-                  },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0)),
-                  padding: EdgeInsets.all(0.0),
-                  child: Icon(AppIcons.settings,
-                      color: StateContainer.of(context).curTheme.text,
-                      size: 24)),
+              width: 80.0,
+              height: mainCardHeight,
+              alignment: AlignmentDirectional(-1, -1),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 200),
+                curve: Curves.easeInOut,
+                margin: EdgeInsetsDirectional.only(
+                    top: settingsIconMarginTop, start: 5),
+                height: 50,
+                width: 50,
+                child: FlatButton(
+                    highlightColor: StateContainer.of(context).curTheme.text15,
+                    splashColor: StateContainer.of(context).curTheme.text15,
+                    onPressed: () {
+                      _scaffoldKey.currentState.openDrawer();
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Icon(AppIcons.settings,
+                        color: StateContainer.of(context).curTheme.text,
+                        size: 24)),
+              ),
             ),
-          ),
-          AnimatedContainer(
-            duration: Duration(milliseconds: 200),
-            height: mainCardHeight,
-            curve: Curves.easeInOut,
-            child: _getBalanceWidget(),
-          ),
-          // natricon
-          StateContainer.of(context).natriconOn
-              ? AnimatedContainer(
-                  duration: Duration(milliseconds: 200),
-                  curve: Curves.easeInOut,
-                  width: mainCardHeight == 64 ? 60 : 74,
-                  height: mainCardHeight == 64 ? 60 : 74,
-                  margin: EdgeInsets.only(right: 2),
-                  alignment: Alignment(0, 0),
-                  child: Stack(
-                    children: <Widget>[
-                      Center(
-                        child: Container(
-                          // natricon
-                          child: Hero(
-                            tag: "avatar",
-                            child: SvgPicture.network(
-                              UIUtil.getNatriconURL(StateContainer.of(context).selectedAccount.address, StateContainer.of(context).getNatriconNonce(StateContainer.of(context).selectedAccount.address)),    
-                              key: Key(UIUtil.getNatriconURL(StateContainer.of(context).selectedAccount.address, StateContainer.of(context).getNatriconNonce(StateContainer.of(context).selectedAccount.address))),
-                              placeholderBuilder: (BuildContext context) =>
-                                  Container(
-                                child: FlareActor(
-                                  "assets/ntr_placeholder_animation.flr",
-                                  animation: "main",
-                                  fit: BoxFit.contain,
-                                  color: StateContainer.of(context)
-                                      .curTheme
-                                      .primary,
+            AnimatedContainer(
+              duration: Duration(milliseconds: 200),
+              height: mainCardHeight,
+              curve: Curves.easeInOut,
+              child: _getBalanceWidget(),
+            ),
+            // natricon
+            StateContainer.of(context).natriconOn
+                ? AnimatedContainer(
+                    duration: Duration(milliseconds: 200),
+                    curve: Curves.easeInOut,
+                    width: mainCardHeight == 64 ? 60 : 74,
+                    height: mainCardHeight == 64 ? 60 : 74,
+                    margin: EdgeInsets.only(right: 2),
+                    alignment: Alignment(0, 0),
+                    child: Stack(
+                      children: <Widget>[
+                        Center(
+                          child: Container(
+                            // natricon
+                            child: Hero(
+                              tag: "avatar",
+                              child: SvgPicture.network(
+                                UIUtil.getNatriconURL(StateContainer.of(context).selectedAccount.address, StateContainer.of(context).getNatriconNonce(StateContainer.of(context).selectedAccount.address)),    
+                                key: Key(UIUtil.getNatriconURL(StateContainer.of(context).selectedAccount.address, StateContainer.of(context).getNatriconNonce(StateContainer.of(context).selectedAccount.address))),
+                                placeholderBuilder: (BuildContext context) =>
+                                    Container(
+                                  child: FlareActor(
+                                    "assets/ntr_placeholder_animation.flr",
+                                    animation: "main",
+                                    fit: BoxFit.contain,
+                                    color: StateContainer.of(context)
+                                        .curTheme
+                                        .primary,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      Center(
-                        child: Container(
-                          color: Colors.transparent,
-                          child: FlatButton(
-                            onPressed: () {
-                              Navigator.of(context).pushNamed('/avatar_page');
-                            },
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100.0)),
-                            highlightColor:
-                                StateContainer.of(context).curTheme.text15,
-                            splashColor:
-                                StateContainer.of(context).curTheme.text15,
-                            padding: EdgeInsets.all(0.0),
-                            child: Container(
-                              color: Colors.transparent,
+                        Center(
+                          child: Container(
+                            color: Colors.transparent,
+                            child: FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/avatar_page');
+                              },
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(100.0)),
+                              highlightColor:
+                                  StateContainer.of(context).curTheme.text15,
+                              splashColor:
+                                  StateContainer.of(context).curTheme.text15,
+                              padding: EdgeInsets.all(0.0),
+                              child: Container(
+                                color: Colors.transparent,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  )
+                : AnimatedContainer(
+                    duration: Duration(milliseconds: 200),
+                    curve: Curves.easeInOut,
+                    width: 80.0,
+                    height: mainCardHeight,
                   ),
-                )
-              : AnimatedContainer(
-                  duration: Duration(milliseconds: 200),
-                  curve: Curves.easeInOut,
-                  width: 80.0,
-                  height: mainCardHeight,
-                ),
-        ],
-      ),
+          ],
+        ),
+        Row(
+          children: [
+            AnimatedContainer(
+              duration: Duration(microseconds: 200),
+              curve: Curves.easeInOut,
+              height: 400,
+              width: MediaQuery.of(context).size.width - 35,
+              child: _getBalanceChart(),
+            )
+        ],)
+      ],)
     );
   } //Main Card
 
@@ -1783,6 +1798,10 @@ class _AppHomePageState extends State<AppHomePage>
               ),
       ),
     );
+  }
+
+  Widget _getBalanceChart() {
+    return PriceChartWidget();
   }
 }
 

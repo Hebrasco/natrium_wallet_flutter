@@ -5,7 +5,6 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:natrium_wallet_flutter/util/sharedprefsutil.dart';
 import 'package:logger/logger.dart';
-import 'package:natrium_wallet_flutter/model/wallet.dart';
 import 'package:natrium_wallet_flutter/network/model/block_types.dart';
 import 'package:natrium_wallet_flutter/network/model/request/account_info_request.dart';
 import 'package:natrium_wallet_flutter/network/model/request/block_info_request.dart';
@@ -29,7 +28,6 @@ import 'package:natrium_wallet_flutter/network/model/request/process_request.dar
 import 'package:natrium_wallet_flutter/network/model/response/account_history_response.dart';
 import 'package:natrium_wallet_flutter/network/model/response/block_info_item.dart';
 import 'package:natrium_wallet_flutter/network/model/response/error_response.dart';
-import 'package:natrium_wallet_flutter/network/model/response/account_history_response_item.dart';
 import 'package:natrium_wallet_flutter/network/model/response/accounts_balances_response.dart';
 import 'package:natrium_wallet_flutter/network/model/response/callback_response.dart';
 import 'package:natrium_wallet_flutter/network/model/response/subscribe_response.dart';

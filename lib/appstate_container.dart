@@ -214,6 +214,7 @@ class StateContainerState extends State<StateContainer> {
     _priceEventSub =
         EventTaxiImpl.singleton().registerTo<PriceEvent>().listen((event) {
       // PriceResponse's get pushed periodically, it wasn't a request we made so don't pop the queue
+      print(event.response.price.toString());
       setState(() {
         wallet.btcPrice = event.response.btcPrice.toString();
         wallet.localCurrencyPrice = event.response.price.toString();

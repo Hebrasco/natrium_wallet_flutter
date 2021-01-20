@@ -59,7 +59,7 @@ dependencies:
 
   # Android/iOS path provider
   path_provider: ^1.6.7
-  
+
   # TouchID/FaceID
   local_auth: ^0.6.3+1
 
@@ -68,7 +68,7 @@ dependencies:
 
   # SVG
   flutter_svg: ^0.18.1
-    
+
   # QR Codes
   qr_flutter: ^2.0.1 # Generator
   barcode_scan:
@@ -138,6 +138,8 @@ dependencies:
       url: https://github.com/bbedward/manta-dart.git
       ref: master
 
+  fl_chart: ^0.12.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -206,7 +208,7 @@ flutter:
     - assets/pulltosend_animation.flr
     - assets/sheethandle_animation.flr
     - assets/ntr_placeholder_animation.flr
-    
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
