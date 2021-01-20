@@ -7,19 +7,9 @@ class PriceChartRightTitles {
     showTitles: true,
     getTextStyles: (value) => TextStyle(
       color: StateContainer.of(context).curTheme.primary,
-      // fontWeight: FontWeight.bold,
-      // fontSize: 12,
     ),
     getTitles: (value) {
-      switch (value.toInt()) {
-        case 1:
-          return '10k';
-        case 3:
-          return '30k';
-        case 5:
-          return '50k';
-      }
-      return '';
+      return value.toString();
     },
     reservedSize: 35,
     margin: 12,

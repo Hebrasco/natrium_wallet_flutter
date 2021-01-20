@@ -8,8 +8,6 @@ class PriceChartBottomTitles {
     reservedSize: 35,
     getTextStyles: (value) => TextStyle(
       color: StateContainer.of(context).curTheme.primary,
-      // fontWeight: FontWeight.bold,
-      // fontSize: 12,
     ),
     getTitles: (value) {
       switch (value.toInt()) {
