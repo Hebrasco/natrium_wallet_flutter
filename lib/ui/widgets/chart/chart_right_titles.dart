@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:natrium_wallet_flutter/appstate_container.dart';
 
 class PriceChartRightTitles {
-  static getRightTitles(context) => SideTitles(
+  static getRightTitles(BuildContext context) => SideTitles(
     showTitles: true,
     getTextStyles: (value) => TextStyle(
       color: StateContainer.of(context).curTheme.primary,
     ),
     getTitles: (value) {
-      return value.toString();
+      return StateContainer.of(context).curCurrency.getCurrencySymbol() + value.toString();
     },
     reservedSize: 35,
     margin: 12,

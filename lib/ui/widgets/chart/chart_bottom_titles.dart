@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:natrium_wallet_flutter/appstate_container.dart';
 
 class PriceChartBottomTitles {
-  static getBottomTitles(context) => SideTitles(
+  static getBottomTitles(BuildContext context) => SideTitles(
     showTitles: true,
     reservedSize: 35,
     getTextStyles: (value) => TextStyle(

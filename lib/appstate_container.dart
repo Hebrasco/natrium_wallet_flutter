@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:logger/logger.dart';
 import 'package:flutter_nano_ffi/flutter_nano_ffi.dart';
+import 'package:natrium_wallet_flutter/model/chart.dart';
 import 'package:natrium_wallet_flutter/model/wallet.dart';
 import 'package:event_taxi/event_taxi.dart';
 import 'package:flutter/foundation.dart';
@@ -124,6 +125,9 @@ class StateContainerState extends State<StateContainer> {
   // When wallet is encrypted
   String encryptedSecret;
 
+  // Chart State
+  Chart chart;
+
   void updateNinjaNodes(List<NinjaNode> list) {
     setState(() {
       nanoNinjaNodes = list;
@@ -194,6 +198,9 @@ class StateContainerState extends State<StateContainer> {
     sl.get<SharedPrefsUtil>().getUseNatricon().then((useNatricon) {
       setNatriconOn(useNatricon);
     });
+
+    // Load Chart
+    chart = Chart();
   }
 
   // Subscriptions

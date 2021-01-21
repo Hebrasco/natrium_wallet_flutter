@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:natrium_wallet_flutter/appstate_container.dart';
 
 class PriceChartTouchData {
-  static getTouchData(context)=> LineTouchData(
+  static getTouchData(BuildContext context)=> LineTouchData(
     enabled: true,
     touchTooltipData: PriceChartTooltipData.getTooltipData(context),
     getTouchedSpotIndicator: (barData, indicators) => PriceChartTouchedSpotIndicator.getTouchedSpotIndicator(context, barData, indicators),
@@ -11,7 +11,7 @@ class PriceChartTouchData {
 }
 
 class PriceChartTooltipData {
-  static getTooltipData(context) => LineTouchTooltipData(
+  static getTooltipData(BuildContext context) => LineTouchTooltipData(
     tooltipBgColor: StateContainer.of(context).curTheme.primary20 ,
     getTooltipItems: (touchedSpots) => touchedSpots.map((LineBarSpot touchedSpot) {
       if (touchedSpot == null) {
@@ -28,7 +28,7 @@ class PriceChartTooltipData {
 }
 
 class PriceChartTouchedSpotIndicator {
-  static getTouchedSpotIndicator(context, barData, indicators) => defaultTouchedIndicators(barData, indicators, context);
+  static getTouchedSpotIndicator(BuildContext context, LineChartBarData barData, List<int> indicators) => defaultTouchedIndicators(barData, indicators, context);
 
   static List<TouchedSpotIndicatorData> defaultTouchedIndicators(LineChartBarData barData, List<int> indicators, BuildContext context) {
     if (indicators == null) {
