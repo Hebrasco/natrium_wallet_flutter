@@ -31,8 +31,8 @@ class ChartWidgetState extends State<ChartWidget> {
     width: MediaQuery.of(context).size.width,
     child: LineChart(
       LineChartData(
-        minX: 0,
-        maxX: StateContainer.of(context).chart.amountSteps,
+        minX: StateContainer.of(context).chart.minAmountSteps,
+        maxX: StateContainer.of(context).chart.maxAmountSteps,
         minY: StateContainer.of(context).chart.minValue,
         maxY: StateContainer.of(context).chart.maxValue,
         titlesData: PriceChartTitles.getTitleData(context),

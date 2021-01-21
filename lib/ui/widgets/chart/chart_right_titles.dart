@@ -9,7 +9,7 @@ class PriceChartRightTitles {
       color: StateContainer.of(context).curTheme.primary,
     ),
     getTitles: (value) {
-      return StateContainer.of(context).curCurrency.getCurrencySymbol() + value.toString();
+      return StateContainer.of(context).curCurrency.getCurrencySymbol() + value.toStringAsFixed(2).toString();
     },
     reservedSize: 35,
     margin: 12,
