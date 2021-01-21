@@ -1517,7 +1517,7 @@ class _AppHomePageState extends State<AppHomePage>
               duration: Duration(microseconds: 200),
               curve: Curves.easeInOut,
               height: 400,
-              width: MediaQuery.of(context).size.width - 35,
+              width: MediaQuery.of(context).size.width - 28,
               child: _getBalanceChart(),
             )
         ],)

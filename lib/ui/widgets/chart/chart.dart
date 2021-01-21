@@ -28,30 +28,30 @@ class ChartWidgetState extends State<ChartWidget> {
   @override
   Widget build(BuildContext context) => Container(
     height: 350,
-    width: MediaQuery.of(context).size.width,
+    width: MediaQuery.of(context).size.width - 50,
     child: LineChart(
-      LineChartData(
-        minX: StateContainer.of(context).chart.minAmountSteps,
-        maxX: StateContainer.of(context).chart.maxAmountSteps,
-        minY: StateContainer.of(context).chart.minValue,
-        maxY: StateContainer.of(context).chart.maxValue,
-        titlesData: PriceChartTitles.getTitleData(context),
-        gridData: FlGridData(
-          show: true,
-          getDrawingHorizontalLine: (value) {
-            return FlLine(
-              color: StateContainer.of(context).curTheme.background,
-              strokeWidth: 0.5,
-            );
-          },
-          drawVerticalLine: false,
+        LineChartData(
+          minX: StateContainer.of(context).chart.minAmountSteps,
+          maxX: StateContainer.of(context).chart.maxAmountSteps,
+          minY: StateContainer.of(context).chart.minValue,
+          maxY: StateContainer.of(context).chart.maxValue,
+          titlesData: PriceChartTitles.getTitleData(context),
+          gridData: FlGridData(
+            show: true,
+            getDrawingHorizontalLine: (value) {
+              return FlLine(
+                color: StateContainer.of(context).curTheme.background,
+                strokeWidth: 0.5,
+              );
+            },
+            drawVerticalLine: false,
+          ),
+          borderData: FlBorderData(
+            show: false,
+          ),
+          lineBarsData: [PriceChartData.getChartData(context)],
+          lineTouchData: PriceChartTouchData.getTouchData(context),
         ),
-        borderData: FlBorderData(
-          show: false,
-        ),
-        lineBarsData: [PriceChartData.getChartData(context)],
-        lineTouchData: PriceChartTouchData.getTouchData(context),
       ),
-    ),
   );
 }

@@ -43,13 +43,13 @@ class Chart {
     FlSpot(21, 2.1),
     FlSpot(22, 2.5),
     FlSpot(23, 2.6),
-    FlSpot(24, 2.7),
   ];
   List<FlSpot> weekSpots = [
     FlSpot(0, 3),
     FlSpot(1, 2),
     FlSpot(2, 5),
     FlSpot(3, 2.5),
+    FlSpot(5, 3.3),
     FlSpot(5, 4),
     FlSpot(6, 3),
   ];
@@ -90,6 +90,7 @@ class Chart {
     FlSpot(1, 0.6),
     FlSpot(2, 1),
     FlSpot(3, 1.1),
+    FlSpot(4, 1.2),
     FlSpot(5, 1.4),
     FlSpot(6, 1.3),
     FlSpot(7, 1.7),
@@ -113,12 +114,9 @@ class Chart {
   ];
 
   Chart() {
-    this.minValue = 0;
-    this.maxValue = 10;
-    this.minAmountSteps = 0;
-    this.maxAmountSteps = 12;
     this.spots = todaySpots;
     this.selectedHistoryButton = ChartHistoryButtonTypes.TODAY;
+    reload();
   }
 
   void reload() {
@@ -143,17 +141,30 @@ class Chart {
   }
 
   void reloadTitles() {
-    double valueOffset = 1;
+    double valueOffset = 0.5;
+    double zeroPoint = 0;
 
     minAmountSteps = spots.first.x;
     maxAmountSteps = spots.last.x;
     minValue = spots.first.y;
-    maxValue = spots.last.y;
+    maxValue = spots.first.y;
 
     spots.forEach((spot) {
-      if (spot.y > maxValue) maxValue = spot.y + valueOffset;
-      if (spot.y < minValue) minValue = spot.y - valueOffset;
+      print("Spot Y: " + spot.y.toString() + 
+      ", newMin: " + (spot.y <= minValue).toString() + 
+      ", newMax: " + (spot.y >= maxValue).toString());
+
+      if (spot.y >= maxValue) maxValue = spot.y;
+      if (spot.y <= minValue) minValue = spot.y;
     });
+
+    double newMinValue = minValue - valueOffset;
+    if (newMinValue < zeroPoint) {
+      minValue = zeroPoint;
+    } else {
+      minValue = newMinValue;
+    }
+    maxValue += valueOffset;
   }
 
   String getBottomTitles(double titleSpot) {
@@ -169,11 +180,12 @@ class Chart {
       case ChartHistoryButtonTypes.MAX:
         return parseMaxTitle(titleSpot);
       default:
+        return "missing";
     }
   }
 
   String parseTodayTitle(double titleSpot) {
-    if (titleSpot % 3 == 0 && titleSpot != spots.first.x && titleSpot != spots.last.x) {
+    if (titleSpot % 3 == 0 && titleSpot != spots.first.x) {
       return spots[titleSpot.toInt()].x.toInt().toString() + ":00";
     } else {
       return "";
@@ -182,8 +194,6 @@ class Chart {
 
   String parseWeekTitle(double titleSpot)  {
     switch (titleSpot.toInt()) {
-      case 1: 
-        return "MON";
       case 2:
         return "TUE";
       case 3:
@@ -196,12 +206,13 @@ class Chart {
         return "SAT";
       case 7:
         return "SUN";
+      default:
+        return "";
     }
-    return "";
   }
 
   String parseMonthTitle(double titleSpot)  {
-    if (titleSpot.toInt() % 3 == 0 && titleSpot != spots.first.x && titleSpot != spots.last.x) {
+    if (titleSpot.toInt() % 3 == 0 && titleSpot != spots.first.x) {
       return titleSpot.toInt().toString() + ".";
     } else {
       return "";
@@ -211,19 +222,20 @@ class Chart {
   String parseYearTitle(double titleSpot)  {
     switch (titleSpot.toInt()) {
       case 1: 
-        return "JAN";
+        return "FEB";
       case 3:
-        return "MAR";
+        return "APR";
       case 5:
-        return "MAY";
+        return "JUN";
       case 7:
-        return "JUL";
+        return "AUG";
       case 9:
-        return "SEP";
+        return "OCT";
       case 11:
-        return "NOV";
+        return "DEC";
+      default:
+        return "";
     }
-    return "";
   }
 
   String parseMaxTitle(double titlespot) {
