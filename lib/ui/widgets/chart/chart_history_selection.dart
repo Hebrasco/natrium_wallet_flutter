@@ -22,7 +22,7 @@ class ChartHistorySelectionState extends State<ChartHistorySelection> {
     StateContainer.of(context).setState(() {
       StateContainer.of(context).chart.selectedHistoryButton = buttonType;
     });
-    StateContainer.of(context).chart.fetchHistoryData(StateContainer.of(context).curCurrency);
+    StateContainer.of(context).chart.fetchHistoryData(StateContainer.of(context).curCurrency, buttonType);
     StateContainer.of(context).chart.reload();
   }
 

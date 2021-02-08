@@ -1,9 +1,6 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/foundation.dart';
 import 'package:natrium_wallet_flutter/model/available_currency.dart';
-import 'package:natrium_wallet_flutter/network/model/response/error_response.dart';
 import 'package:natrium_wallet_flutter/network/model/response/nano_history_response.dart';
 import 'package:natrium_wallet_flutter/network/nano_history_service.dart';
 
@@ -120,34 +117,60 @@ class Chart {
   ];
 
   Chart(AvailableCurrency currency) {
-    fetchHistoryData(currency);
-    this.spots = todaySpots;
     this.selectedHistoryButton = ChartHistoryButtonTypes.TODAY;
+    loadHistoryData(currency);
     reload();
   }
 
-  Future<void> fetchHistoryData(AvailableCurrency currency) async {
-      NanoHistoryService().fetchNanoHistory(currency).then((response) {
+  void loadHistoryData(AvailableCurrency currency) {
+    fetchHistoryData(currency, ChartHistoryButtonTypes.TODAY);
+    fetchHistoryData(currency, ChartHistoryButtonTypes.WEEK);
+    fetchHistoryData(currency, ChartHistoryButtonTypes.MONTH);
+    fetchHistoryData(currency, ChartHistoryButtonTypes.YEAR);
+    fetchHistoryData(currency, ChartHistoryButtonTypes.MAX);
+
+    reload();
+  }
+
+  Future<void> fetchHistoryData(AvailableCurrency currency, ChartHistoryButtonTypes historyType) async {
+      NanoHistoryService().fetchNanoHistory(currency, historyType).then((response) {
         print("res: " + response.toString());
         NanoHistoryResponse historyResponse = NanoHistoryResponse.fromJson(response);
-        fillValues(historyResponse);
+        fillValues(historyResponse, historyType);
       });
     
   }
 
-  void fillValues(NanoHistoryResponse response) {
-    List<FlSpot> newWeekSpots = [];
+  void fillValues(NanoHistoryResponse response, ChartHistoryButtonTypes historyType) {
+    List<FlSpot> newSpots = [];
     response.prices.forEach((priceList) {
       DateTime time = DateTime.fromMillisecondsSinceEpoch(priceList.first.toInt());
-      print("Time: " + time.toString());
+      print(historyType.toString() + " Time: " + time.toString());
 
       double spotIndex = response.prices.indexOf(priceList).toDouble();
       FlSpot spot = FlSpot(spotIndex, priceList.last);
 
-      newWeekSpots.add(spot);
+      newSpots.add(spot);
     });
 
-    weekSpots = newWeekSpots;
+    switch (selectedHistoryButton) {
+      case ChartHistoryButtonTypes.TODAY:
+        todaySpots = newSpots;
+        break;
+      case ChartHistoryButtonTypes.WEEK:
+        weekSpots = newSpots;
+        break;
+      case ChartHistoryButtonTypes.MONTH:
+        monthSpots = newSpots;
+        break;
+      case ChartHistoryButtonTypes.YEAR:
+        yearSpots = newSpots;
+        break;
+      case ChartHistoryButtonTypes.MAX:
+        maxSpots = newSpots;
+        break;
+      default:
+    }
   }
 
   void reload() {
