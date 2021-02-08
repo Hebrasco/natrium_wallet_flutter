@@ -200,7 +200,7 @@ class StateContainerState extends State<StateContainer> {
     });
 
     // Load Chart
-    chart = Chart();
+    chart = Chart(curCurrency);
   }
 
   // Subscriptions

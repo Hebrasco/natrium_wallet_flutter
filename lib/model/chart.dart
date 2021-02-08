@@ -1,5 +1,11 @@
+import 'dart:async';
+import 'dart:convert';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:natrium_wallet_flutter/ui/widgets/chart/chart_history_selection.dart';
+import 'package:flutter/foundation.dart';
+import 'package:natrium_wallet_flutter/model/available_currency.dart';
+import 'package:natrium_wallet_flutter/network/model/response/error_response.dart';
+import 'package:natrium_wallet_flutter/network/model/response/nano_history_response.dart';
+import 'package:natrium_wallet_flutter/network/nano_history_service.dart';
 
 enum ChartHistoryButtonTypes {
   TODAY,
@@ -113,10 +119,35 @@ class Chart {
     FlSpot(11, 1),
   ];
 
-  Chart() {
+  Chart(AvailableCurrency currency) {
+    fetchHistoryData(currency);
     this.spots = todaySpots;
     this.selectedHistoryButton = ChartHistoryButtonTypes.TODAY;
     reload();
+  }
+
+  Future<void> fetchHistoryData(AvailableCurrency currency) async {
+      NanoHistoryService().fetchNanoHistory(currency).then((response) {
+        print("res: " + response.toString());
+        NanoHistoryResponse historyResponse = NanoHistoryResponse.fromJson(response);
+        fillValues(historyResponse);
+      });
+    
+  }
+
+  void fillValues(NanoHistoryResponse response) {
+    List<FlSpot> newWeekSpots = [];
+    response.prices.forEach((priceList) {
+      DateTime time = DateTime.fromMillisecondsSinceEpoch(priceList.first.toInt());
+      print("Time: " + time.toString());
+
+      double spotIndex = response.prices.indexOf(priceList).toDouble();
+      FlSpot spot = FlSpot(spotIndex, priceList.last);
+
+      newWeekSpots.add(spot);
+    });
+
+    weekSpots = newWeekSpots;
   }
 
   void reload() {
@@ -150,10 +181,6 @@ class Chart {
     maxValue = spots.first.y;
 
     spots.forEach((spot) {
-      print("Spot Y: " + spot.y.toString() + 
-      ", newMin: " + (spot.y <= minValue).toString() + 
-      ", newMax: " + (spot.y >= maxValue).toString());
-
       if (spot.y >= maxValue) maxValue = spot.y;
       if (spot.y <= minValue) minValue = spot.y;
     });
@@ -194,17 +221,17 @@ class Chart {
 
   String parseWeekTitle(double titleSpot)  {
     switch (titleSpot.toInt()) {
-      case 2:
+      case 1:
         return "TUE";
-      case 3:
+      case 2:
         return "WED";
-      case 4:
+      case 3:
         return "THU";
-      case 5:
+      case 4:
         return "FRI";
-      case 6:
+      case 5:
         return "SAT";
-      case 7:
+      case 6:
         return "SUN";
       default:
         return "";
