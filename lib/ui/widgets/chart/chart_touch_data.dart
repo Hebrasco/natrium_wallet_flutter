@@ -22,7 +22,7 @@ class PriceChartTooltipData {
         fontWeight: FontWeight.bold,
         fontSize: 14,
       );
-      return LineTooltipItem(touchedSpot.y.toString(), textStyle);
+      return LineTooltipItem(touchedSpot.y.toStringAsFixed(2), textStyle);
     }).toList()
   );
 }
