@@ -128,8 +128,6 @@ class Chart {
     fetchHistoryData(currency, ChartHistoryButtonTypes.MONTH);
     fetchHistoryData(currency, ChartHistoryButtonTypes.YEAR);
     fetchHistoryData(currency, ChartHistoryButtonTypes.MAX);
-
-    reload();
   }
 
   Future<void> fetchHistoryData(AvailableCurrency currency, ChartHistoryButtonTypes historyType) async {
@@ -145,7 +143,7 @@ class Chart {
     List<FlSpot> newSpots = [];
     response.prices.forEach((priceList) {
       DateTime time = DateTime.fromMillisecondsSinceEpoch(priceList.first.toInt());
-      print(historyType.toString() + " Time: " + time.toString());
+      print(historyType.toString() + ", Time: " + time.toString() + ", Price: " + priceList.last.toStringAsFixed(2));
 
       double spotIndex = response.prices.indexOf(priceList).toDouble();
       FlSpot spot = FlSpot(spotIndex, priceList.last);
@@ -153,7 +151,7 @@ class Chart {
       newSpots.add(spot);
     });
 
-    switch (selectedHistoryButton) {
+    switch (historyType) {
       case ChartHistoryButtonTypes.TODAY:
         todaySpots = newSpots;
         break;
