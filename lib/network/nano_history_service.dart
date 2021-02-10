@@ -21,11 +21,11 @@ class NanoHistoryService {
         break;
       case ChartHistoryButtonTypes.WEEK:
         pastDaysParam = "7";
-        intervalParam = "daily";
+        intervalParam = "hourly";
         break;
       case ChartHistoryButtonTypes.MONTH:
         pastDaysParam = "30";
-        intervalParam = "daily";
+        intervalParam = "hourly";
         break;
       case ChartHistoryButtonTypes.YEAR:
         pastDaysParam = "365";
